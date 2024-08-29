@@ -61,6 +61,8 @@ end
 ## Exercise
 
 ```ruby
+# write your program below
+
 account = BankAccount.new
 account.deposit(100)
 account.withdraw(30)
@@ -68,9 +70,8 @@ puts account.check_balance  # Should output 70
 
 account.withdraw(100)       # Should print "Insufficient funds"
 account.deposit(-50)        # Should print "Invalid deposit amount"
-# write your program below
 ```
-{: .repl #bank_account title="Bank Account" readonly_lines="[1,2,3,4,5,6,7,8]"}
+{: .repl #bank_account title="Bank Account" readonly_lines="[2,3,4,5,6,7,8,9]"}
 
 ```ruby
 describe "BankAccount" do
