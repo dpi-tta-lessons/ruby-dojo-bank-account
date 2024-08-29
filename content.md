@@ -71,7 +71,7 @@ puts account.check_balance  # Should output 70
 account.withdraw(100)       # Should print "Insufficient funds"
 account.deposit(-50)        # Should print "Invalid deposit amount"
 ```
-{: .repl #bank_account title="Bank Account" readonly_lines="[2,3,4,5,6,7,8,9]"}
+{: .repl #bank_account title="Bank Account" readonly_lines="[1,3,4,5,6,7,8,9]"}
 
 ```ruby
 describe "BankAccount" do
