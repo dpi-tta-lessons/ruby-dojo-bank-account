@@ -136,3 +136,8 @@ describe "BankAccount" do
 end
 ```
 {: .repl-test #bank_account_test_6 for="bank_account" title="BankAccount rejects negative or zero withdrawals" points="1"}
+
+---
+
+- Approximately how long (in minutes) did this lesson take you to complete?
+{: .free_text_number #time_taken title="Time taken" points="1" answer="any" }
