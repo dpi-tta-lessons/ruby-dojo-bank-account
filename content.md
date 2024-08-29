@@ -1,23 +1,142 @@
-# Replace with lesson title
+# Ruby Gym: Bank Account
+Write a class called `BankAccount` that represents a simple bank account. The class should allow users to deposit, withdraw, and check their balance.
 
-Add your content here!
+## Objectives
 
-[Read up here for full instructions with examples for lesson writing.](https://learn.firstdraft.com/lessons/3-how-to-write-a-lesson)
+### 1. Create the `BankAccount` Class:
+- Initialize the class with an instance variable `balance` set to 0.
 
-## Heading 1
+### 2. Add a `deposit` Method:
+- Define a method `deposit` that takes a single argument, `amount`.
+- This method should add the `amount` to the `balance`.
+- If the amount is negative or zero, print "Invalid deposit amount".
 
-Use `##` second or greater level headings (HTML `<h2>` and greater).
+### 3. Add a `withdraw` Method:
+- Define a method withdraw that takes a single argument, amount.
+- This method should subtract the amount from the balance.
+- If the amount is greater than the balance, print "Insufficient funds" and do not change the balance.
+- If the amount is negative or zero, print "Invalid withdrawal amount".
 
-### Heading 1.1
+### 4. Add a `check_balance` Method:
+- Define a method `check_balance` that returns the current balance.
 
-Reference images from the `assets/` folder like so:
+## Tips
+- Implement the `BankAccount` class and its methods as described. (You can leave the method implementations empty at first)
+- Try runnning in your own codespace
+- Add lots of `puts` statements to debug
 
+<!--## Solution
+```ruby
+class BankAccount
+  def initialize
+    @balance = 0
+  end
+
+  def deposit(amount)
+    if amount > 0
+      @balance += amount
+    else
+      puts "Invalid deposit amount"
+    end
+  end
+
+  def withdraw(amount)
+    if amount > 0
+      if amount <= @balance
+        @balance -= amount
+      else
+        puts "Insufficient funds"
+      end
+    else
+      puts "Invalid withdrawal amount"
+    end
+  end
+
+  def check_balance
+    @balance
+  end
+end
+```-->
+
+## Exercise
+
+```ruby
+account = BankAccount.new
+account.deposit(100)
+account.withdraw(30)
+puts account.check_balance  # Should output 70
+
+account.withdraw(100)       # Should print "Insufficient funds"
+account.deposit(-50)        # Should print "Invalid deposit amount"
+# write your program below
 ```
-![](assets/example-image.png)
-```
+{: .repl #bank_account title="Bank Account" readonly_lines="[1,2,3,4,5,6,7,8]"}
 
-You can use the path `/assets/my-image.png` or `assets/my-image.png`, both will render in your local markdown preview; and when you connect the repository with a Learn Lesson, the assets will upload to Cloudinary and the paths will automatically be converted to a hosted URL, e.g.:
 
+Test Your Class
+Here are some tests to help you verify your implementation:
+
+```ruby
+describe "BankAccount" do
+  it "initializes with a balance of 0" do
+    account = BankAccount.new
+    expect(account.check_balance).to eq(0)
+  end
+end
 ```
-![](https://res.cloudinary.com/[CLOUD_NAME]/image/upload/[IMAGE_VERSION]/appdev-lessons/[REPO_NAME]/[BRANCH]/[IMAGE_NAME])
+{: .repl-test #bank_account_test_1 for="bank_account" title="BankAccount initializes with a balance of 0" points="1"}
+
+```ruby
+describe "BankAccount" do
+  it "allows deposits and updates balance correctly" do
+    account = BankAccount.new
+    account.deposit(100)
+    expect(account.check_balance).to eq(100)
+  end
+end
 ```
+{: .repl-test #bank_account_test_2 for="bank_account" title="BankAccount allows deposits and updates balance correctly" points="1"}
+
+```ruby
+describe "BankAccount" do
+  it "rejects negative or zero deposits" do
+    account = BankAccount.new
+    expect { account.deposit(-50) }.to output("Invalid deposit amount\n").to_stdout
+    expect(account.check_balance).to eq(0)
+  end
+end
+```
+{: .repl-test #bank_account_test_3 for="bank_account" title="BankAccount rejects negative or zero deposits" points="1"}
+
+```ruby
+describe "BankAccount" do
+  it "allows withdrawals and updates balance correctly" do
+    account = BankAccount.new
+    account.deposit(100)
+    account.withdraw(30)
+    expect(account.check_balance).to eq(70)
+  end
+end
+```
+{: .repl-test #bank_account_test_4 for="bank_account" title="BankAccount allows withdrawals and updates balance correctly" points="1"}
+
+```ruby
+describe "BankAccount" do
+  it "rejects withdrawals greater than balance" do
+    account = BankAccount.new
+    account.deposit(50)
+    expect { account.withdraw(100) }.to output("Insufficient funds\n").to_stdout
+    expect(account.check_balance).to eq(50)
+  end
+```
+{: .repl-test #bank_account_test_5 for="bank_account" title="BankAccount rejects withdrawals greater than balance" points="1"}
+
+```ruby
+describe "BankAccount" do
+  it "rejects negative or zero withdrawals" do
+    account = BankAccount.new
+    expect { account.withdraw(-30) }.to output("Invalid withdrawal amount\n").to_stdout
+  end
+end
+```
+{: .repl-test #bank_account_test_6 for="bank_account" title="BankAccount rejects negative or zero withdrawals" points="1"}
