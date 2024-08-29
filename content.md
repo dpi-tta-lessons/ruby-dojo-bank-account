@@ -125,6 +125,7 @@ describe "BankAccount" do
     expect { account.withdraw(100) }.to output("Insufficient funds\n").to_stdout
     expect(account.check_balance).to eq(50)
   end
+end
 ```
 {: .repl-test #bank_account_test_5 for="bank_account" title="BankAccount rejects withdrawals greater than balance" points="1"}
 
