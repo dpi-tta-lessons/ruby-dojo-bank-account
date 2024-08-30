@@ -25,39 +25,6 @@ Write a class called `BankAccount` that represents a simple bank account. The cl
 - Try runnning in your own codespace
 - Add lots of `puts` statements to debug
 
-<!--## Solution
-```ruby
-class BankAccount
-  def initialize
-    @balance = 0
-  end
-
-  def deposit(amount)
-    if amount > 0
-      @balance += amount
-    else
-      puts "Invalid deposit amount"
-    end
-  end
-
-  def withdraw(amount)
-    if amount > 0
-      if amount <= @balance
-        @balance -= amount
-      else
-        puts "Insufficient funds"
-      end
-    else
-      puts "Invalid withdrawal amount"
-    end
-  end
-
-  def check_balance
-    @balance
-  end
-end
-```-->
-
 ## Exercise
 
 ```ruby
