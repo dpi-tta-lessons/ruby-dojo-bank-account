@@ -23,7 +23,7 @@ Write a class called `BankAccount` that represents a simple bank account. The cl
 ## Tips
 - Implement the `BankAccount` class and its methods as described. (You can leave the method implementations empty at first)
 - Try runnning in your own codespace
-- Add lots of `puts` statements to debug
+- Use `puts` statements for logging and debugging
 
 ## Exercise
 
