@@ -1,4 +1,4 @@
-# Ruby Gym: Bank Account
+# Ruby Dojo: Bank Account
 Write a class called `BankAccount` that represents a simple bank account. The class should allow users to deposit, withdraw, and check their balance.
 
 ## Objectives
